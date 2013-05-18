@@ -6,7 +6,7 @@
 
     <groupId>solar-mg</groupId>
     <artifactId>solar-mg</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.7-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
