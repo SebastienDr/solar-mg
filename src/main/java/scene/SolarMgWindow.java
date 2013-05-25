@@ -12,7 +12,7 @@ import templates.Basic3DWindow;
 public class SolarMgWindow extends Basic3DWindow {
 
     public SolarMgWindow(String title) {
-        super(title, 600, 480);
+        super(title, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
     public static void main(String[] args) {

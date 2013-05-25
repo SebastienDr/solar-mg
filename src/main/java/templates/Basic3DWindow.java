@@ -19,6 +19,12 @@ import java.awt.event.WindowEvent;
  */
 public class Basic3DWindow extends Frame {
 
+    // Constants
+    public static final int DEFAULT_WIDTH = 600;
+    public static final int DEFAULT_HEIGHT = 480;
+
+    protected FPSAnimator animator;
+
     public Basic3DWindow() {
         super("Basic3DWindow");
 
@@ -26,7 +32,7 @@ public class Basic3DWindow extends Frame {
         GLCapabilities caps = new GLCapabilities(glp);
         GLCanvas canvas = new GLCanvas(caps);
 
-        setSize(300, 300);
+        setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
         add(canvas);
         setVisible(true);
 
@@ -38,7 +44,7 @@ public class Basic3DWindow extends Frame {
 
         canvas.addGLEventListener(new Scene());
 
-        FPSAnimator animator = new FPSAnimator(canvas, 60);
+        animator = new FPSAnimator(canvas, 60);
         animator.add(canvas);
         animator.start();
     }
@@ -47,6 +53,10 @@ public class Basic3DWindow extends Frame {
         this();
         setTitle(title);
         setSize(width, height);
+    }
+
+    public float calculateWHRatio() {
+        return (float) getSize().getWidth() / (float) getSize().getHeight();
     }
 
 }
