@@ -1,17 +1,22 @@
 package scene;
 
+import com.jogamp.opengl.util.awt.TextRenderer;
 import core.*;
 import navigation.Position;
+import templates.Basic3DWindow;
 
 import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 import javax.media.opengl.GLEventListener;
 import javax.media.opengl.glu.GLU;
 
+import java.awt.*;
+
 import static javax.media.opengl.GL2.*;
 
 public class Scene implements GLEventListener {
 
+    protected TextRenderer renderer;
     private GL2 gl;
     private GLU glu;
 
@@ -30,6 +35,8 @@ public class Scene implements GLEventListener {
         glu = new GLU();
         gl = drawable.getGL().getGL2();
         this.shapeBuilder = new ShapeBuilder(glu, gl);
+
+        renderer = new TextRenderer(new Font("Console", Font.BOLD, 14));
         buildObjects();
     }
 
@@ -37,7 +44,7 @@ public class Scene implements GLEventListener {
         p = new Planet(6.378f, position(0, 0, 0));
         p2 = new Planet(5f, position(40, 0, 0));
         Route route = new Route(p, p2);
-        t = new Transport(route, position(7, 0, 0));
+        t = new Transport(route);
     }
 
     @Override
@@ -85,6 +92,12 @@ public class Scene implements GLEventListener {
 
     private void render() {
         clearScreen();
+
+        renderer.beginRendering(Basic3DWindow.DEFAULT_WIDTH, Basic3DWindow.DEFAULT_HEIGHT);
+        renderer.setColor(0.0f, 1.0f, 0.0f, 1.0f);
+        renderer.draw("$"+10000, 10, 10);
+        renderer.endRendering();
+
         shapeBuilder.newSphere(p, color(0.3f, 0.5f, 1f));
         shapeBuilder.newSphere(p2, color(0f, 1f, 0f));
         shapeBuilder.newTransport(t, color(1f, 0f, 0f));

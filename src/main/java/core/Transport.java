@@ -21,20 +21,36 @@ public class Transport {
         this.route = route;
     }
 
+    public Transport(Route route) {
+        this.route = route;
+        this.status = TransportStatus.CARRYING;
+        this.position = new Position(route.getStartRoute().getPosition());
+    }
+
     // Method
     public void update() {
         switch (getStatus()) {
             case CARRYING:
                 position.setX(position.getX() + speed);
-                if (position.getX() >= route.getEndRoute().getPosition().getX() - route.getEndRoute().getRadius())
+                if (hasDelivered())
                     setStatus(TransportStatus.RETURNING);
                 break;
             case RETURNING:
                 position.setX(position.getX() - speed);
-                if (position.getX() < route.getStartRoute().getPosition().getX() + route.getStartRoute().getRadius())
+                if (hasReturned())
                     setStatus(TransportStatus.CARRYING);
                 break;
         }
+    }
+
+    private boolean hasReturned() {
+        Planet start = route.getStartRoute();
+        return position.getX() < start.getPosition().getX() + start.getRadius();
+    }
+
+    private boolean hasDelivered() {
+        Planet target = route.getEndRoute();
+        return position.getX() >= target.getPosition().getX() - target.getRadius();
     }
 
     // Accessors
