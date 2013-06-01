@@ -4,7 +4,7 @@ import navigation.Position;
 
 public class Transport {
 
-    public static final float DEFAULT_SPEED = 0.5f;
+    private static final float DEFAULT_SPEED = 0.5f;
 
     private Position position;
     private TransportStatus status;
@@ -43,12 +43,12 @@ public class Transport {
         }
     }
 
-    private boolean hasReturned() {
+    public boolean hasReturned() {
         Planet start = route.getStartRoute();
         return position.getX() < start.getPosition().getX() + start.getRadius();
     }
 
-    private boolean hasDelivered() {
+    public boolean hasDelivered() {
         Planet target = route.getEndRoute();
         return position.getX() >= target.getPosition().getX() - target.getRadius();
     }
@@ -56,6 +56,10 @@ public class Transport {
     // Accessors
     public Position getPosition() {
         return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = new Position(position);
     }
 
     public TransportStatus getStatus() {
