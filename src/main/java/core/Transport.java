@@ -4,7 +4,7 @@ import navigation.Position;
 
 public class Transport {
 
-    private static final float DEFAULT_SPEED = 0.5f;
+    private static final float DEFAULT_SPEED = 0.2f;
 
     private Position position;
     private TransportStatus status;

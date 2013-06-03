@@ -30,4 +30,8 @@ public class Player {
     public void setTransports(List<Transport> transports) {
         this.transports = transports;
     }
+
+    public void updateWallet(int i) {
+        this.wallet = this.wallet + i;
+    }
 }

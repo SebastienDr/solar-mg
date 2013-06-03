@@ -9,9 +9,7 @@ import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 import javax.media.opengl.GLEventListener;
 import javax.media.opengl.glu.GLU;
-
 import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 import static javax.media.opengl.GL2.*;
@@ -29,7 +27,6 @@ public class Scene implements GLEventListener {
     List<Transport> ts;
 
     private ShapeBuilder shapeBuilder;
-    private int wallet = 10000;
 
     public Scene() {
     }
@@ -45,16 +42,17 @@ public class Scene implements GLEventListener {
     }
 
     private void buildObjects() {
-        p = new Planet(6.378f, position(0, 0, 0));
-        p2 = new Planet(5f, position(40, 0, 0));
+        player = new Player();
+        p = new Planet(7f, position(0, 0, 0));
+        p2 = new Planet(4f, position(81, 0, 0));
         Route route = new Route(p, p2);
-        ts = new TransportFactory().createTransports(route, 3);
+        ts = new TransportFactory().createTransports(route, 4);
     }
 
     @Override
     public void display(GLAutoDrawable drawable) {
         update();
-        new Camera(drawable.getGL().getGL2(), glu, 100);
+        new Camera(drawable.getGL().getGL2(), glu, 200);
         //setLight();
         render();
     }
@@ -91,16 +89,17 @@ public class Scene implements GLEventListener {
     }
 
     private void update() {
-        for (int i = 0; i < ts.size(); i++) {
-            ts.get(i).update();
-            if (ts.get(i).hasDelivered()) {
-                updateWallet(1000);
-            }
-        }
+        updateTransports();
     }
 
-    private void updateWallet(int i) {
-        wallet = wallet + i;
+    private void updateTransports() {
+        for (int i = 0; i < ts.size(); i++) {
+            Transport transport = ts.get(i);
+            transport.update();
+            if (transport.hasDelivered()) {
+                player.updateWallet(1000);
+            }
+        }
     }
 
     private void render() {
@@ -110,14 +109,14 @@ public class Scene implements GLEventListener {
         shapeBuilder.newSphere(p, color(0.3f, 0.5f, 1f));
         shapeBuilder.newSphere(p2, color(0f, 1f, 0f));
         for (int i = 0; i < ts.size(); i++) {
-            shapeBuilder.newTransport(ts.get(i), color(1f, 0f, 0f));
+            shapeBuilder.newTransport(ts.get(i), color(1f, 0.5f, 0f));
         }
     }
 
     private void renderText() {
         renderer.beginRendering(Basic3DWindow.DEFAULT_WIDTH, Basic3DWindow.DEFAULT_HEIGHT);
         renderer.setColor(0.0f, 1.0f, 0.0f, 1.0f);
-        renderer.draw("$ "+ wallet, 10, 10);
+        renderer.draw("€ "+ player.getWallet(), 10, 10);
         renderer.endRendering();
     }
 

@@ -5,6 +5,9 @@ import navigation.Position;
 
 import java.util.List;
 
+import static core.TransportStatus.CARRYING;
+import static core.TransportStatus.RETURNING;
+
 /**
  * Define a route between planets
  */
@@ -12,7 +15,7 @@ public class Route {
 
     Planet startRoute;
     Planet endRoute;
-    List<Position> positions;
+    List<RouteDirection> positions;
 
     public Route(Planet startRoute, Planet endRoute) {
         this.startRoute = startRoute;
@@ -36,56 +39,58 @@ public class Route {
     }
 
     public Position calculateAR() {
-        double x = (endRoute.getPosition().getX() - startRoute.getPosition().getX()) * 2;
+        double x = (endRoute.getPosition().getX() - startRoute.getPosition().getX() - startRoute.getRadius() - endRoute.getRadius()) * 2;
         double y = (endRoute.getPosition().getY() - startRoute.getPosition().getY()) * 2;
         double z = (endRoute.getPosition().getZ() - startRoute.getPosition().getZ()) * 2;
         return new Position(x, y, z);
     }
 
-    public List<Position> calculatePositionForTransports(int nb) {
+    public List<RouteDirection> calculatePositionForTransports(int nb) {
         positions = Lists.newArrayList();
-        Position startPos = startRoute.getPosition();
-        Position endPos = endRoute.getPosition();
+        Position startPos = startRoute.getPosition().add(new Position((double) startRoute.getRadius(), 0.0, 0.0));
+        Position endPos = endRoute.getPosition().minus(new Position((double) endRoute.getRadius(), 0.0, 0.0));
         if (nb >= 1)
-            positions.add(startPos);
+            positions.add(new RouteDirection(startPos, CARRYING));
         if (nb >= 2) {
-            Position pos = calculateAR();
-            Position movement = new Position(pos.getX() / nb, pos.getY() / nb, pos.getZ() / nb);
-            Position posMoved = startPos.add(movement);
+            Position aR = calculateAR();
+            System.out.println("AR : " + aR);
+            Position movement = new Position(aR.getX() / nb, aR.getY() / nb, aR.getZ() / nb);
+            System.out.println("Distance divisée par " + nb + " : " + movement);
+            Position newPos = startPos.add(movement);
             if (nb % 2 == 0)
-                pair(nb, endPos, posMoved);
+                pair(nb, movement, endPos, newPos);
             else
-                impair(nb, movement, posMoved);
+                impair(nb, movement, newPos);
         }
 
         return positions;
     }
 
-    private void impair(int nb, Position movement, Position posMoved) {
-        positions.add(posMoved);
+    private void impair(int nb, Position movement, Position newPos) {
+        positions.add(new RouteDirection(newPos, CARRYING));
         if (nb > 3) {
-            impair(nb - 2, movement, posMoved);
+            impair(nb - 2, movement, newPos.add(movement));
         }
-        positions.add(posMoved);
+        positions.add(new RouteDirection(newPos, RETURNING));
     }
 
-    private void pair(int nb, Position endPos, Position posMoved) {
+    private void pair(int nb, Position movement, Position endPos, Position newPos) {
         if (nb == 2) {
-            positions.add(endPos);
+            positions.add(new RouteDirection(endPos, RETURNING));
         } else {
-            positions.add(posMoved);
-            pair(nb - 2, endPos, posMoved);
-            positions.add(posMoved);
+            positions.add(new RouteDirection(newPos, CARRYING));
+            pair(nb - 2, movement, endPos, newPos.add(movement));
+            positions.add(new RouteDirection(newPos, RETURNING));
         }
     }
 
     public void addPositions(Position movementToPos, int nb) {
         if (nb % 2 == 0) {
-            positions.add(endRoute.getPosition());
+            positions.add(new RouteDirection(endRoute.getPosition(), CARRYING));
         } else {
-            positions.add(startRoute.getPosition().add(movementToPos));
+            positions.add(new RouteDirection(startRoute.getPosition().add(movementToPos), CARRYING));
             addPositions(movementToPos, nb - 2);
-            positions.add(startRoute.getPosition().add(movementToPos));
+            positions.add(new RouteDirection(startRoute.getPosition().add(movementToPos), RETURNING));
         }
         startRoute.getPosition().add(movementToPos);
     }

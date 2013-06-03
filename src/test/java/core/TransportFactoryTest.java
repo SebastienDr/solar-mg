@@ -13,35 +13,35 @@ public class TransportFactoryTest {
     public void should_defineAllPositions_with_0_set_no_position() {
         Route r = buildRoute(0, 10);
         tf.defineAllPositions(r, 0);
-        assertThat(tf.getPositions()).hasSize(0);
+        assertThat(tf.getRouteDirections()).hasSize(0);
     }
 
     @Test
     public void should_defineAllPositions_with_1_set_position_to_start_route_position() {
         Route r = buildRoute(0, 7);
         tf.defineAllPositions(r, 1);
-        assertThat(tf.getPositions()).hasSize(1);
-        assertThat(tf.getPositions().get(0)).isEqualTo(r.getStartRoute().getPosition());
+        assertThat(tf.getRouteDirections()).hasSize(1);
+        assertThat(tf.getRouteDirections().get(0).getPosition()).isEqualTo(r.getStartRoute().getPosition());
     }
 
     @Test
     public void should_defineAllPositions_with_2_set_position_to_start_and_end_route_position() {
         Route r = buildRoute(0, 7);
         tf.defineAllPositions(r, 2);
-        assertThat(tf.getPositions().size()).isEqualTo(2);
-        assertThat(tf.getPositions().get(0)).isEqualTo(r.getStartRoute().getPosition());
-        assertThat(tf.getPositions().get(1)).isEqualTo(r.getEndRoute().getPosition());
+        assertThat(tf.getRouteDirections().size()).isEqualTo(2);
+        assertThat(tf.getRouteDirections().get(0).getPosition()).isEqualTo(r.getStartRoute().getPosition());
+        assertThat(tf.getRouteDirections().get(1).getPosition()).isEqualTo(r.getEndRoute().getPosition());
     }
 
     @Test
     public void should_defineAllPositions_with_4_set_position_to_start_and_each_third_position() {
         Route r = buildRoute(0, 7);
         tf.defineAllPositions(r, 4);
-        assertThat(tf.getPositions().size()).isEqualTo(4);
-        assertThat(tf.getPositions().get(0)).isEqualTo(r.getStartRoute().getPosition());
-        assertThat(tf.getPositions().get(1)).isEqualTo(new Position(3.5, 0.0, 0.0));
-        assertThat(tf.getPositions().get(2)).isEqualTo(new Position(6.0, 0.0, 0.0));
-        assertThat(tf.getPositions().get(3)).isEqualTo(new Position(3.5, 0.0, 0.0));
+        assertThat(tf.getRouteDirections().size()).isEqualTo(4);
+        assertThat(tf.getRouteDirections().get(0).getPosition()).isEqualTo(r.getStartRoute().getPosition());
+        assertThat(tf.getRouteDirections().get(1).getPosition()).isEqualTo(new Position(3.5, 0.0, 0.0));
+        assertThat(tf.getRouteDirections().get(2).getPosition()).isEqualTo(new Position(6.0, 0.0, 0.0));
+        assertThat(tf.getRouteDirections().get(3).getPosition()).isEqualTo(new Position(3.5, 0.0, 0.0));
     }
 
     @Test
