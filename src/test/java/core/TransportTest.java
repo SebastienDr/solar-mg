@@ -21,43 +21,43 @@ public class TransportTest {
 
     @Test
     public void should_afterHalfway_be_false_for_going_and_position_be_01_0_0() {
-        transport(GOING, position(0.1, 0.0, 0.0));
+        transportGoing(position(0.1, 0.0, 0.0));
         assertThat(transport.afterHalfway()).isFalse();
     }
 
     @Test
     public void should_afterHalfway_be_true_for_going_and_position_be_600() {
-        transport(GOING, position(0.6, 0.0, 0.0));
+        transportGoing(position(0.6, 0.0, 0.0));
         assertThat(transport.afterHalfway()).isTrue();
     }
 
     @Test
     public void should_afterHalfway_be_true_if_returning_and_position_be_300() {
-        transport(RETURNING, position(0.3, 0.0, 0.0));
+        transportReturning(position(0.3, 0.0, 0.0));
         assertThat(transport.afterHalfway()).isTrue();
     }
 
     @Test
     public void should_afterHalfway_be_false_if_returning_and_position_be_halfway() {
-        transport(RETURNING, position(0.5, 0.0, 0.0));
+        transportReturning(position(0.5, 0.0, 0.0));
         assertThat(transport.afterHalfway()).isFalse();
     }
 
     @Test
     public void should_afterHalfway_be_false_if_going_and_position_be_halfway() {
-        transport(GOING, position(0.5, 0.0, 0.0));
+        transportGoing(position(0.5, 0.0, 0.0));
         assertThat(transport.afterHalfway()).isFalse();
     }
 
     @Test
     public void should_afterHalfway_be_false_if_returning_and_position_be_600() {
-        transport(RETURNING, position(0.6, 0.0, 0.0));
+        transportReturning(position(0.6, 0.0, 0.0));
         assertThat(transport.afterHalfway()).isFalse();
     }
 
     @Test
     public void should_update_while_GOING_increase_transport_position() {
-        transport(GOING, position(0.3, 0.0, 0.0));
+        transportGoing(position(0.3, 0.0, 0.0));
         // When
         transport.update();
         // Then
@@ -66,7 +66,7 @@ public class TransportTest {
 
     @Test
     public void should_update_while_RETURNING_decrease_transport_position() {
-        transport(RETURNING, position(0.3, 0.0, 0.0));
+        transportReturning(position(0.3, 0.0, 0.0));
         // When
         transport.update();
         // Then
@@ -74,19 +74,21 @@ public class TransportTest {
     }
 
     @Test
-    public void should_update_when_transport_has_reached_target_change_status_to_DELIVERING() {
-        transport(GOING, POSITION_100);
+    public void should_update_when_transport_GOING_has_reached_target_change_status_to_DELIVERING() {
+        transportGoing(POSITION_100);
         transport.setResources(Transport.MAX_CAPACITY);
         // When
         transport.update();
         // Then
+        assertThat(transport.getSpeed()).isEqualTo(0.0f);
+        assertThat(transport.getPosition().getX()).isEqualTo(1.0);
         assertThat(transport.getStatus()).isEqualTo(DELIVERING);
         assertThat(transport.getResources()).isEqualTo(Transport.MAX_CAPACITY);
     }
 
     @Test
     public void should_update_keep_status_to_DELIVERING_and_reduce_resources_if_transport_has_not_finished_delivering() {
-        transport(DELIVERING, POSITION_100);
+        transportDelivering(POSITION_100);
         transport.setResources(30);
         // When
         transport.update();
@@ -97,7 +99,7 @@ public class TransportTest {
 
     @Test
     public void should_update_when_transport_has_finished_DELIVERING_change_status_to_RETURNING() {
-        transport(DELIVERING, POSITION_100);
+        transportDelivering(POSITION_100);
         transport.setResources(0);
         // When
         transport.update();
@@ -108,15 +110,18 @@ public class TransportTest {
     }
 
     @Test
-    public void should_update_when_transport_has_reached_start_change_status_to_LOADING() {
-        transport(RETURNING, POSITION_000);
+    public void should_update_when_transport_RETURNING_has_reached_start_change_status_to_LOADING() {
+        transportReturning(POSITION_000);
         transport.update();
+        assertThat(transport.getPosition().getZ()).isEqualTo(0.0);
+        assertThat(transport.getPosition().getY()).isEqualTo(0.0);
+        assertThat(transport.getPosition().getX()).isEqualTo(0.0);
         assertThat(transport.getStatus()).isEqualTo(LOADING);
     }
 
     @Test
     public void should_update_move_transport_if_RETURNING_from_target() {
-        transport(RETURNING, POSITION_100);
+        transportReturning(POSITION_100);
         // When
         transport.update();
         // Then
@@ -126,7 +131,7 @@ public class TransportTest {
 
     @Test
     public void should_update_keep_status_to_LOADING_and_increase_resources_if_transport_has_not_finished_loading() {
-        transport(LOADING, POSITION_000);
+        transportLoading(POSITION_000);
         transport.setResources(30);
         transport.update();
         assertThat(transport.getStatus()).isEqualTo(LOADING);
@@ -135,7 +140,7 @@ public class TransportTest {
 
     @Test
     public void should_update_when_transport_has_finished_LOADING_change_status_to_GOING() {
-        transport(LOADING, POSITION_000);
+        transportLoading(POSITION_000);
         transport.setResources(Transport.MAX_CAPACITY);
         // When
         transport.update();
@@ -151,15 +156,28 @@ public class TransportTest {
         return new Route(new Planet(1.0f, start), new Planet(1.0f, end));
     }
 
-    private void transport(TransportStatus status, Position position) {
-        if (status == GOING) {
-            transport.setDirection(POSITION_100);
-        }
-        if (status == RETURNING) {
-            transport.setDirection(position(-1.0, 0.0, 0.0));
-        }
+    private void transportGoing(Position position) {
+        transport.setDirection(POSITION_100);
         transport.setPosition(position);
-        transport.setStatus(status);
+        transport.setStatus(GOING);
+        transport.setSpeed(0.2f);
+    }
+
+    private void transportReturning(Position position) {
+        transport.setDirection(position(-1.0, 0.0, 0.0));
+        transport.setPosition(position);
+        transport.setStatus(RETURNING);
+        transport.setSpeed(0.2f);
+    }
+
+    private void transportLoading(Position position) {
+        transport.setPosition(position);
+        transport.setStatus(LOADING);
+    }
+
+    private void transportDelivering(Position position) {
+        transport.setPosition(position);
+        transport.setStatus(DELIVERING);
     }
 
     private Position position(double x, double y, double z) {

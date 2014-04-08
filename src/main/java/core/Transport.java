@@ -140,8 +140,10 @@ public class Transport implements Moveable, Updatable {
     }
 
     public void slowDown() {
-        this.speed = this.speed - 0.001f;
-    }
+        if (speed > 0) {
+            this.speed = this.speed - 0.001f;
+        }
+}
 
     // Accessors
     public Position getPosition() {
@@ -190,5 +192,9 @@ public class Transport implements Moveable, Updatable {
 
     public Double getUpkeep() {
         return this.upkeep;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
     }
 }
