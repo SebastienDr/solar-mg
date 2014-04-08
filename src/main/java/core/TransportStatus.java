@@ -2,5 +2,5 @@ package core;
 
 public enum TransportStatus {
 
-    CARRYING, RETURNING
+    GOING, RETURNING, LOADING, DELIVERING
 }

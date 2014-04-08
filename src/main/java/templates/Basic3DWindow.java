@@ -10,18 +10,11 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-/**
- * Created with IntelliJ IDEA.
- * User: sdrouard
- * Date: 17/05/13
- * Time: 22:51
- * To change this template use File | Settings | File Templates.
- */
 public class Basic3DWindow extends Frame {
 
     // Constants
-    public static final int DEFAULT_WIDTH = 600;
-    public static final int DEFAULT_HEIGHT = 480;
+    public static final int DEFAULT_WIDTH = 800;
+    public static final int DEFAULT_HEIGHT = 600;
 
     protected FPSAnimator animator;
 
@@ -42,7 +35,9 @@ public class Basic3DWindow extends Frame {
             }
         });
 
-        canvas.addGLEventListener(new Scene());
+        Scene scene = new Scene();
+        canvas.addGLEventListener(scene);
+        canvas.addKeyListener(scene);
 
         animator = new FPSAnimator(canvas, 60);
         animator.add(canvas);

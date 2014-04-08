@@ -33,6 +33,6 @@ public class RouteDirection {
 
     @Override
     public String toString() {
-        return position +","+ direction;
+        return position +"-"+ direction;
     }
 }

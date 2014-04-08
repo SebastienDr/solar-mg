@@ -1,37 +1,35 @@
 package core;
 
-
-import java.util.List;
-
 public class Player {
 
-    private static final int START_VALUE = 10000;
-
-    private int wallet;
-    private List<Transport> transports;
+    private static final int WALLET_START_VALUE = 10000;
+    private Wallet wallet;
 
     public Player() {
-        this.wallet = START_VALUE;
+        this.wallet = new Wallet(WALLET_START_VALUE);
+    }
+
+    // Methods
+    public Integer showWallet() {
+        return wallet.getMoney().intValue();
+
+    }
+
+    public void removeMoney(Double price) {
+        wallet.removeMoney(price);
+    }
+
+    public void removeMoney(int price) {
+        wallet.removeMoney(Double.valueOf(price));
+    }
+
+    public void addMoney(int price) {
+        wallet.addMoney(Double.valueOf(price));
     }
 
     // Accessor
-    public int getWallet() {
+    public Wallet getWallet() {
         return wallet;
     }
 
-    public void setWallet(int wallet) {
-        this.wallet = wallet;
-    }
-
-    public List<Transport> getTransports() {
-        return transports;
-    }
-
-    public void setTransports(List<Transport> transports) {
-        this.transports = transports;
-    }
-
-    public void updateWallet(int i) {
-        this.wallet = this.wallet + i;
-    }
 }

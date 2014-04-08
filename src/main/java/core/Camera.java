@@ -1,6 +1,5 @@
 package core;
 
-import scene.Scene;
 import templates.Basic3DWindow;
 
 import javax.media.opengl.GL2;
@@ -9,13 +8,6 @@ import javax.media.opengl.glu.GLU;
 import static javax.media.opengl.fixedfunc.GLMatrixFunc.GL_MODELVIEW;
 import static javax.media.opengl.fixedfunc.GLMatrixFunc.GL_PROJECTION;
 
-/**
- * Created with IntelliJ IDEA.
- * User: sdrouard
- * Date: 25/05/13
- * Time: 03:32
- * To change this template use File | Settings | File Templates.
- */
 public class Camera {
 
     private final int width;
