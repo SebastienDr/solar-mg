@@ -23,12 +23,16 @@ public class ShapeBuilder {
         gl.glColor3f(color[0], color[1], color[2]);
     }
 
-    public void newSphere(Planet p, Float[] color) {
+    public void newPlanet(Planet p, Float[] color) {
         gl.glPushMatrix();
         setColorTo(color);
         gl.glTranslated(p.getPosition().getX(), p.getPosition().getY(), p.getPosition().getZ());
         createSphere(p.getRadius());
         gl.glPopMatrix();
+    }
+
+    public void newPlanet(Planet p) {
+        newPlanet(p, new Float[]{0.5f, 0.5f, 0.5f});
     }
 
     public void newTransport(Transport t, Float[] color) {

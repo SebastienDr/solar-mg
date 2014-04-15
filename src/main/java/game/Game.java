@@ -2,7 +2,6 @@ package game;
 
 import com.google.common.collect.Lists;
 import core.*;
-import navigation.Updatable;
 import scene.ShapeBuilder;
 
 import java.util.List;
@@ -47,7 +46,7 @@ public class Game {
         Float[] color;
         for (Planet p : planets) {
             color = color(0.3f, 0.5f, 1f);
-            shapeBuilder.newSphere(p, color);
+            shapeBuilder.newPlanet(p, color);
         }
         for (Transport t : transports) {
             shapeBuilder.newTransport(t, color(1f, 0.5f, 0f));
