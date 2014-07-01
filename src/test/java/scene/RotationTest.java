@@ -22,7 +22,6 @@ public class RotationTest implements GLEventListener {
     // Fields
     private GLU glu;
     private GL2 gl;
-    private List<Renderer> renderers;
     double speed, j;
 
     public static void main(String[] args) {
@@ -59,29 +58,12 @@ public class RotationTest implements GLEventListener {
 
     @Override
     public void init(GLAutoDrawable drawable) {
-        renderers = Lists.<Renderer>newArrayList();
         gl = drawable.getGL().getGL2();
         glu = new GLU();
-        new Camera(gl, glu, 50);
+        new Camera(gl, glu, 30);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
         speed = 0;
         j = 0;
-//        // Sun
-//        Sphere sun = new Sphere(2.0f, Position.POSITION_000, 1, axis(1.0, 0.0, 0.0));
-//        renderers.add(rendererFor(sun));
-//
-//        // Planet and satellite
-//        Sphere sat = new Sphere(0.3f, create(9, 0, 0), 0, axis(1.0, 1.0, 0.0));
-//        Sphere planet = new Sphere(1.0f, create(7, 0, 0), 2, axis(1.0, 1.0, 0.0));
-//        planet.addSatellite(sat);
-//        renderers.add(rendererFor(planet));
-
-    }
-
-    private Renderer<Sphere> rendererFor(Sphere sphere) {
-        Renderer<Sphere> renderer = new Renderer<Sphere>(sphere);
-        renderer.inject(gl, glu);
-        return renderer;
     }
 
     @Override
@@ -91,76 +73,53 @@ public class RotationTest implements GLEventListener {
     // To override
     public void render(GLAutoDrawable drawable) {
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
-//        for (Renderer renderer : renderers) {
-//            renderer.render();
-//        }
-        // rotate all the scene
-        //rotateY(0.5);
-        //solarSystem();
-        gl.glLoadIdentity();
-        sun();
 
-        planet(2.0, speed/2, speed, 5.0);
-        planet(2.0, speed, speed * 2, 12.0);
+        sun(2.0, speed/7);
+
+        planet(0.5, speed/2, speed, 7.0);
+
+        planet(0.8, speed/3, 3/speed/5, 10.0);
+
+        // 1st satellite for first planet
+        contextPlanet(speed/2, speed, 7.0);
+        rotateZ(speed);
+        gl.glTranslated(2.0, 0.0, 0.0);
+        rotateZ(2*speed/3);
+        sphere(0.5 / 3);
+
+        // 2nd satellite for first planet
+        contextPlanet(speed/2, speed, 7.0);
+        rotateZ(speed/3);
+        gl.glTranslated(4.0, 0.0, 0.0);
+        rotateZ(2*speed);
+        sphere(0.1);
+
+        // 1st satellite for second planet
+        contextPlanet(speed/3, 3/speed/5, 10.0);
+        rotateZ(3*speed);
+        gl.glTranslated(2.0, 0.0, 0.0);
+        rotateZ(speed);
+        sphere(0.2);
 
         speed = speed + 1;
     }
 
-    private void sun() {
-        sphere(0.2);
+    private void sun(double radius, double angle) {
+        gl.glLoadIdentity();
+        rotateZ(angle);
+        sphere(radius);
     }
 
     private void planet(double radius, double selfSpeed, double speedAroundSun, double positionFromSun) {
+        contextPlanet(selfSpeed, speedAroundSun, positionFromSun);
+        sphere(radius);
+    }
+
+    private void contextPlanet(double selfSpeed, double speedAroundSun, double positionFromSun) {
         gl.glLoadIdentity();
         rotateZ(selfSpeed);
         gl.glTranslated(positionFromSun, 0.0, 0.0);
         rotateZ(speedAroundSun);
-        sphere(radius);
-        //satellite(radius/3, 2*selfSpeed, 2*selfSpeed/3, 4.0);
-        rotateZ(2*selfSpeed);
-        gl.glTranslated(4.0, 0.0, 0.0);
-        rotateZ(2*selfSpeed/3);
-        sphere(radius/3);
-    }
-
-    private void satellite(double radius, double selfSpeed, double speedAroundPlanet, double positionFromPlanet) {
-        rotateZ(selfSpeed);
-        gl.glTranslated(positionFromPlanet, 0.0, 0.0);
-        rotateZ(speedAroundPlanet);
-        sphere(radius);
-    }
-
-    private void solarSystem() {
-        // reset the scene
-        gl.glLoadIdentity();
-        // rotate the entire scene
-//        gl.glRotated(45.0, 1.0, 0.0, 0.0);
-
-        // Remember : openGL is a state machine => order is important !
-        // self rotating sphere on z-axis with speed.
-        selfRotatingSphere(6.0, speed);
-        // rotating next object around sphere   (order is important !)
-        gl.glLoadIdentity();
-        gl.glRotated(speed * 3, 0.0, 0.0, 1.0);
-        gl.glTranslated(15, 0, 0);
-        selfRotatingSphere(2.5, j);
-
-        gl.glTranslated(6, 0, 0);
-        gl.glRotated(-speed, 0.0, 0.0, 1.0);
-        selfRotatingSphere(0.5, j / 2);
-
-        gl.glLoadIdentity();
-        gl.glRotated(j / 12, 0.0, 0.0, 1.0);
-        gl.glTranslated(19, 0, 0);
-        selfRotatingSphere(1.1, j / 12);
-
-        speed = speed + 0.1;
-        j = j + 3;
-    }
-
-    private void selfRotatingSphere(double radius, double rotationSpeed) {
-        gl.glRotated(rotationSpeed, 0.0, 0.0, 1.0);
-        sphere(radius);
     }
 
     private void sphere(double radius) {
@@ -170,14 +129,6 @@ public class RotationTest implements GLEventListener {
         glu.gluQuadricOrientation(q, GLU_OUTSIDE);
         glu.gluSphere(q, radius, 16, 16);
         glu.gluDeleteQuadric(q);
-    }
-
-    private void rotateX(double speed) {
-        gl.glRotated(speed, 1.0, 0.0, 0.0);
-    }
-
-    private void rotateY(double speed) {
-        gl.glRotated(speed, 0.0, 1.0, 0.0);
     }
 
     private void rotateZ(double speed) {
