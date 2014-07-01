@@ -23,7 +23,11 @@ public class ShapeBuilder {
         gl.glColor3f(color[0], color[1], color[2]);
     }
 
-    public void newSphere(Planet p, Float[] color) {
+    public void newPlanet(Planet p) {
+        newPlanet(p, color(0.3f, 0.5f, 1f));
+    }
+
+    public void newPlanet(Planet p, Float[] color) {
         gl.glPushMatrix();
         setColorTo(color);
         gl.glTranslated(p.getPosition().getX(), p.getPosition().getY(), p.getPosition().getZ());
@@ -41,7 +45,7 @@ public class ShapeBuilder {
 
     private void createSphere(float radius, int slices, int stacks) {
         GLUquadric sphere = glu.gluNewQuadric();
-        glu.gluQuadricDrawStyle(sphere, GLU_FILL);
+        glu.gluQuadricDrawStyle(sphere, GLU_LINE);
         glu.gluQuadricNormals(sphere, GLU_FLAT);
         glu.gluQuadricOrientation(sphere, GLU_OUTSIDE);
         glu.gluSphere(sphere, radius, slices, stacks);
@@ -52,4 +56,11 @@ public class ShapeBuilder {
         createSphere(radius, 16, 16);
     }
 
+    private Float[] color(float red, float green, float blue) {
+        Float[] color = new Float[3];
+        color[0] = red;
+        color[1] = green;
+        color[2] = blue;
+        return color;
+    }
 }

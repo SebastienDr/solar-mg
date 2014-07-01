@@ -102,18 +102,6 @@ public class Scene implements GLEventListener, KeyListener {
         game.render(shapeBuilder);
     }
 
-    private void renderText() {
-        textRenderer.beginRendering(Basic3DWindow.DEFAULT_WIDTH, Basic3DWindow.DEFAULT_HEIGHT);
-        textRenderer.setColor(0.0f, 1.0f, 0.0f, 1.0f);
-        textRenderer.draw("€ " + game.getPlayer().showWallet(), 10, 10);
-        time();
-        textRenderer.draw(time + " s", 10, 30);
-        textRenderer.draw("Capacity : " + game.getTransports().get(0).getResources() + " %", 10, 50);
-        textRenderer.draw("Position : " + game.getTransports().get(0).getPosition(), 10, 70);
-        textRenderer.draw("Speed : " + game.getTransports().get(0).getSpeed(), 10, 90);
-        textRenderer.endRendering();
-    }
-
     private void time() {
         if (sec % 60 == 0) {
             time++;

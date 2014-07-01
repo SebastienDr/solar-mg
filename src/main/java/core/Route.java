@@ -16,10 +16,10 @@ public class Route {
     }
 
     /**
-     * Renvoie la difference de position entre le départ et l'arrivée de la Route.
+     * Renvoie la difference de create entre le départ et l'arrivée de la Route.
      * Equivalent de l'axe de la droite passant par ces 2 points.
      *
-     * @return le différentiel de position
+     * @return le différentiel de create
      */
     public Position distance() {
         return endRoute.getPosition().minus(startRoute.getPosition());
@@ -30,7 +30,7 @@ public class Route {
     }
 
     /**
-     * Rerturn halway position.
+     * Rerturn halway create.
      *
      * @return
      */

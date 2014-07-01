@@ -50,8 +50,4 @@ public class Basic3DWindow extends Frame {
         setSize(width, height);
     }
 
-    public float calculateWHRatio() {
-        return (float) getSize().getWidth() / (float) getSize().getHeight();
-    }
-
 }

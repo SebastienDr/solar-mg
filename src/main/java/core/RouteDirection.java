@@ -3,7 +3,7 @@ package core;
 import navigation.Position;
 
 /**
- * Basically, it's a position in space and a direction GOING to target or RETURNING to start
+ * Basically, it's a create in space and a direction GOING to target or RETURNING to start
  */
 public class RouteDirection {
 

@@ -2,12 +2,11 @@ package game;
 
 import com.google.common.collect.Lists;
 import core.*;
-import navigation.Updatable;
 import scene.ShapeBuilder;
 
 import java.util.List;
 
-import static navigation.PositionFactory.position;
+import static navigation.PositionFactory.create;
 
 public class Game {
 
@@ -18,8 +17,8 @@ public class Game {
 
     public void init() {
         player = new Player();
-        Planet p = new Planet(7f, position(0, 0, 0));
-        Planet p2 = new Planet(4f, position(50, 0, 0));
+        Planet p = new Planet(7f, create(0, 0, 0));
+        Planet p2 = new Planet(4f, create(50, 0, 0));
         planets = Lists.newArrayList(p, p2);
         route = new Route(p, p2);
         transports = Lists.newArrayList();
@@ -47,7 +46,7 @@ public class Game {
         Float[] color;
         for (Planet p : planets) {
             color = color(0.3f, 0.5f, 1f);
-            shapeBuilder.newSphere(p, color);
+            shapeBuilder.newPlanet(p, color);
         }
         for (Transport t : transports) {
             shapeBuilder.newTransport(t, color(1f, 0.5f, 0f));
