@@ -1,7 +1,11 @@
-package scene;
+package incubator.scene;
 
 import com.jogamp.opengl.util.FPSAnimator;
 import core.Camera;
+import incubator.core.Planet;
+import incubator.core.Sun;
+import navigation.Position;
+import navigation.PositionFactory;
 
 import javax.media.opengl.*;
 import javax.media.opengl.awt.GLCanvas;
@@ -13,35 +17,14 @@ import java.awt.event.WindowEvent;
 
 import static javax.media.opengl.glu.GLU.*;
 
-public class RotationTest implements GLEventListener {
+public class SolarSystem implements GLEventListener {
 
     // Fields
     private GLU glu;
     private GL2 gl;
     double speed, j;
-
-    public static void main(String[] args) {
-        GLProfile glp = GLProfile.getDefault();
-        GLCapabilities caps = new GLCapabilities(glp);
-        GLCanvas canvas = new GLCanvas(caps);
-
-        Frame frame = new Frame("Rotation test");
-        frame.setSize(800, 600);
-        frame.add(canvas);
-        frame.setVisible(true);
-
-        frame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-
-        canvas.addGLEventListener(new RotationTest());
-
-        FPSAnimator animator = new FPSAnimator(canvas, 60);
-        animator.add(canvas);
-        animator.start();
-    }
+    private Sun sun;
+    private Planet planet1, planet2;
 
     @Override
     public void display(GLAutoDrawable drawable) {
@@ -58,8 +41,16 @@ public class RotationTest implements GLEventListener {
         glu = new GLU();
         new Camera(gl, glu, 30);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
+
         speed = 0;
         j = 0;
+        sun = new Sun(2.0, 0.1);
+        planet1 = new Planet(0.5, 0.0, 0.0, pos(7.0, 0.0, 0.0));
+        planet2 = new Planet(0.8, 0.0, 0.0, pos(10.0, 0.0, 0.0));
+    }
+
+    private Position pos(double x, double y, double z) {
+        return PositionFactory.create(x, y, z);
     }
 
     @Override
@@ -70,11 +61,16 @@ public class RotationTest implements GLEventListener {
     public void render(GLAutoDrawable drawable) {
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
 
-        sun(2.0, speed / 7);
+        sun.updateSelfRotation(0.1);
+        sun.render(gl);
 
-        planet(0.5, speed / 2, speed, 7.0);
+        planet1.updateSelfRotation(0.5);
+        planet1.updateRotationAroundSun(1.0);
+        planet1.render(gl);
 
-        planet(0.8, speed / 3, 3 / speed / 5, 10.0);
+        planet2.updateSelfRotation(0.33);
+        planet2.updateRotationAroundSun(0.2);
+        planet2.render(gl);
 
         // 1st satellite for first planet
         contextPlanet(speed / 2, speed, 7.0);
@@ -130,4 +126,29 @@ public class RotationTest implements GLEventListener {
     private void rotateZ(double speed) {
         gl.glRotated(speed, 0.0, 0.0, 1.0);
     }
+
+    // **************** MAIN PROGRAM **************
+    public static void main(String[] args) {
+        GLProfile glp = GLProfile.getDefault();
+        GLCapabilities caps = new GLCapabilities(glp);
+        GLCanvas canvas = new GLCanvas(caps);
+
+        Frame frame = new Frame("Rotation test");
+        frame.setSize(800, 600);
+        frame.add(canvas);
+        frame.setVisible(true);
+
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+        canvas.addGLEventListener(new SolarSystem());
+
+        FPSAnimator animator = new FPSAnimator(canvas, 60);
+        animator.add(canvas);
+        animator.start();
+    }
+
 }

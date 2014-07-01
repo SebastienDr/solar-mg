@@ -3,7 +3,11 @@ package incubator.core;
 import com.google.common.collect.Lists;
 import navigation.Position;
 
+import javax.media.opengl.glu.GLU;
+import javax.media.opengl.glu.GLUquadric;
 import java.util.List;
+
+import static javax.media.opengl.glu.GLU.*;
 
 public class Sphere {
 
@@ -11,14 +15,17 @@ public class Sphere {
     public static final int INIT_ROTATION_POSITION = 1;
 
     // Fields
-    private double radius;
-    private Position position;
-    private int rotationSpeed;
-    private Position axeRotation;
-    private double selfRotation;
-    private List<Sphere> satellites;
+    protected double radius;
+    protected Position position;
+    protected double rotationSpeed;
+    protected Position axeRotation;
+    protected double selfRotation;
+    protected List<Sphere> satellites;
 
     // Constructor
+    public Sphere() {
+
+    }
 
     /**
      * Sphere creation
@@ -38,6 +45,15 @@ public class Sphere {
     }
 
     // Methods
+    public void render(GLU glu) {
+        GLUquadric q = glu.gluNewQuadric();
+        glu.gluQuadricDrawStyle(q, GLU_LINE);
+        glu.gluQuadricNormals(q, GLU_FLAT);
+        glu.gluQuadricOrientation(q, GLU_OUTSIDE);
+        glu.gluSphere(q, radius, 16, 16);
+        glu.gluDeleteQuadric(q);
+    }
+
     public boolean hasSatellites() {
         return satellites.size() > 0;
     }
@@ -63,11 +79,11 @@ public class Sphere {
         this.position = position;
     }
 
-    public int getRotationSpeed() {
+    public double getRotationSpeed() {
         return rotationSpeed;
     }
 
-    public void setRotationSpeed(int rotationSpeed) {
+    public void setRotationSpeed(double rotationSpeed) {
         this.rotationSpeed = rotationSpeed;
     }
 
@@ -85,6 +101,10 @@ public class Sphere {
 
     public void setSelfRotation(double selfRotation) {
         this.selfRotation = selfRotation;
+    }
+
+    public void updateSelfRotation(double rot) {
+        this.selfRotation = this.selfRotation + rot;
     }
 
     public void updateSelfRotation() {
