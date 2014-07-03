@@ -89,9 +89,9 @@ public class Position {
 
     @Override
     public String toString() {
-        return "(" + FORMAT.format(getX()) +
-                "," + FORMAT.format(getY()) +
-                "," + FORMAT.format(getZ()) +
+        return "(" + getX() +
+                "," + getY() +
+                "," + getZ() +
                 ')';
     }
 

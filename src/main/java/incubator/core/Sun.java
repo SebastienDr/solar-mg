@@ -13,12 +13,21 @@ public class Sun extends Sphere {
      */
     public Sun(double radius, double selfRotation) {
         setRadius(radius);
-        setSelfRotation(selfRotation);
+        setSelfRotationSpeed(selfRotation);
     }
 
     public void render(GL2 gl) {
         gl.glLoadIdentity();
         gl.glRotated(this.getSelfRotation(), 0.0, 0.0, 1.0);
         render(new GLU());
+    }
+
+    public void update() {
+        updateSelfRotation();
+    }
+
+    // toString
+    public String toString() {
+        return "Sun "+super.toString();
     }
 }

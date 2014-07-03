@@ -4,7 +4,6 @@ import core.Camera;
 import game.Game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import templates.Basic3DWindow;
 
 import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
@@ -33,6 +32,7 @@ public class Scene implements GLEventListener, KeyListener {
     private int time = 0;
     private Game game;
     private ShapeBuilder shapeBuilder;
+    private Camera camera;
 
     public Scene() {
     }
@@ -53,11 +53,11 @@ public class Scene implements GLEventListener, KeyListener {
     @Override
     public void display(GLAutoDrawable drawable) {
         update();
-        render();
+        render(drawable.getGL().getGL2());
     }
 
     private void initCamera() {
-        new Camera(gl, glu, 100);
+        camera = new Camera(100);
     }
 
     private void initLights() {
@@ -96,8 +96,9 @@ public class Scene implements GLEventListener, KeyListener {
         game.update();
     }
 
-    private void render() {
+    private void render(GL2 gl) {
         clearScreen();
+        camera.render(gl);
         textRenderer.render();
         game.render(shapeBuilder);
     }

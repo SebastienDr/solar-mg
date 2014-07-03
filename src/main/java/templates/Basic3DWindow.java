@@ -10,13 +10,14 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class Basic3DWindow extends Frame {
+public class Basic3DWindow<T> extends Frame {
 
     // Constants
     public static final int DEFAULT_WIDTH = 800;
     public static final int DEFAULT_HEIGHT = 600;
 
     protected FPSAnimator animator;
+    private T scene;
 
     public Basic3DWindow() {
         super("Basic3DWindow");

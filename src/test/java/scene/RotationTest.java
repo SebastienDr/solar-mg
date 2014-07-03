@@ -19,6 +19,7 @@ public class RotationTest implements GLEventListener {
     private GLU glu;
     private GL2 gl;
     double speed, j;
+    private Camera camera;
 
     public static void main(String[] args) {
         GLProfile glp = GLProfile.getDefault();
@@ -56,7 +57,7 @@ public class RotationTest implements GLEventListener {
     public void init(GLAutoDrawable drawable) {
         gl = drawable.getGL().getGL2();
         glu = new GLU();
-        new Camera(gl, glu, 30);
+        camera = new Camera(30);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
         speed = 0;
         j = 0;
@@ -69,7 +70,7 @@ public class RotationTest implements GLEventListener {
     // To override
     public void render(GLAutoDrawable drawable) {
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
-
+        camera.render(gl);
         sun(2.0, speed / 7);
 
         planet(0.5, speed / 2, speed, 7.0);

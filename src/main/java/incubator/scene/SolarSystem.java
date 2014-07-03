@@ -1,8 +1,10 @@
 package incubator.scene;
 
+import com.google.common.collect.Lists;
 import com.jogamp.opengl.util.FPSAnimator;
 import core.Camera;
 import incubator.core.Planet;
+import incubator.core.Satellite;
 import incubator.core.Sun;
 import navigation.Position;
 import navigation.PositionFactory;
@@ -10,121 +12,113 @@ import navigation.PositionFactory;
 import javax.media.opengl.*;
 import javax.media.opengl.awt.GLCanvas;
 import javax.media.opengl.glu.GLU;
-import javax.media.opengl.glu.GLUquadric;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.List;
 
-import static javax.media.opengl.glu.GLU.*;
-
-public class SolarSystem implements GLEventListener {
+public class SolarSystem extends SceneEvents {
 
     // Fields
-    private GLU glu;
+    private GLU glu = new GLU();
     private GL2 gl;
-    double speed, j;
     private Sun sun;
-    private Planet planet1, planet2;
+    private List<Planet> planets = Lists.newArrayList();
+    private SceneEvents events;
 
+    // ************** INIT *************
+    public void init(GLAutoDrawable drawable) {
+        super.init(drawable);
+        gl = drawable.getGL().getGL2();
+        theSolarSystem();
+        //generate(6);
+    }
+
+
+    private void theSolarSystem() {
+        sun = new Sun(1392.684, 0.037);
+        planets.add(new Planet(2.439, 0.00707, 0.01137, pos(sun.getRadius()+57000, 0.0, 0.0)));
+    }
+
+
+    private void aSolarSystem() {
+        sun = new Sun(2.0, 0.1);
+        Planet planet1 = new Planet(0.5, 0.5, 1.0, pos(7.0, 0.0, 0.0));
+        Planet planet2 = new Planet(0.8, 0.33, 0.2, pos(13.0, 0.0, 0.0));
+        Satellite s11 = new Satellite(0.5 / 3, 1.0, 2.0 / 3, pos(2.0, 0.0, 0.0));
+        Satellite s12 = new Satellite(0.1, 1 / 3, 2.0, pos(3.0, 0.0, 0.0));
+        planet1.addSatellite(s11);
+        planet1.addSatellite(s12);
+        Satellite s21 = new Satellite(0.2, 3.0, 1.0, pos(2.0, 0.0, 0.0));
+        planet2.addSatellite(s21);
+        planets.add(planet1);
+        planets.add(planet2);
+    }
+
+    /**
+     * Generate a solar system
+     */
+    public void generate(int nbMaxPlanet) {
+        sun = new Sun(5 + random(5), random(1));
+        System.out.println(sun);
+        double pos = 0.0;
+        // planets
+        for (int i = 0; i <= random(1, nbMaxPlanet); i++) {
+            Planet p = new Planet(random(1), random(1), random(2), pos(random(5) + sun.getRadius() * 2 + pos, 0.0, 0.0));
+            double posSat = 0.0;
+            for (int j = 0; j < random(0, 4); j++) {
+                Satellite s = new Satellite(p.getRadius() / 2, random(1), random(1) * 2, pos(random(1) + p.getRadius() + posSat, 0.0, 0.0));
+                p.addSatellite(s);
+                posSat = posSat + s.getPosition().getX();
+            }
+            pos = pos + p.getPosition().getX();
+            System.out.println(p);
+            planets.add(p);
+        }
+    }
+
+    private double random(double min, double max) {
+        return min + Math.floor(Math.random() * (max - min));
+    }
+
+    private double random(double max) {
+        return Math.random() * max;
+    }
+
+    // *************** RENDER **************
     @Override
     public void display(GLAutoDrawable drawable) {
-        render(drawable);
+        render();
     }
 
-    @Override
-    public void dispose(GLAutoDrawable drawable) {
-    }
-
-    @Override
-    public void init(GLAutoDrawable drawable) {
-        gl = drawable.getGL().getGL2();
-        glu = new GLU();
-        new Camera(gl, glu, 30);
+    public void render() {
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
-
-        speed = 0;
-        j = 0;
-        sun = new Sun(2.0, 0.1);
-        planet1 = new Planet(0.5, 0.0, 0.0, pos(7.0, 0.0, 0.0));
-        planet2 = new Planet(0.8, 0.0, 0.0, pos(10.0, 0.0, 0.0));
+        // Update
+        updateObjects();
+        camera.setEye(planets.get(0).getPosition());
+        // Render
+        camera.render(gl);
+        renderObjects();
     }
 
+    // ************** OBJECTS in the scene : UPDATE & RENDER **************
+    private void updateObjects() {
+        sun.update();
+        for (Planet p : planets) {
+            p.update();
+        }
+    }
+
+    private void renderObjects() {
+        sun.render(gl);
+        for (Planet p : planets) {
+            p.render(gl);
+        }
+    }
+
+    // **************** OTHERS ****************
     private Position pos(double x, double y, double z) {
         return PositionFactory.create(x, y, z);
-    }
-
-    @Override
-    public void reshape(GLAutoDrawable drawable, int x, int y, int w, int h) {
-    }
-
-    // To override
-    public void render(GLAutoDrawable drawable) {
-        gl.glClear(GL.GL_COLOR_BUFFER_BIT);
-
-        sun.updateSelfRotation(0.1);
-        sun.render(gl);
-
-        planet1.updateSelfRotation(0.5);
-        planet1.updateRotationAroundSun(1.0);
-        planet1.render(gl);
-
-        planet2.updateSelfRotation(0.33);
-        planet2.updateRotationAroundSun(0.2);
-        planet2.render(gl);
-
-        // 1st satellite for first planet
-        contextPlanet(speed / 2, speed, 7.0);
-        rotateZ(speed);
-        gl.glTranslated(2.0, 0.0, 0.0);
-        rotateZ(2 * speed / 3);
-        sphere(0.5 / 3);
-
-        // 2nd satellite for first planet
-        contextPlanet(speed / 2, speed, 7.0);
-        rotateZ(speed / 3);
-        gl.glTranslated(4.0, 0.0, 0.0);
-        rotateZ(2 * speed);
-        sphere(0.1);
-
-        // 1st satellite for second planet
-        contextPlanet(speed / 3, 3 / speed / 5, 10.0);
-        rotateZ(3 * speed);
-        gl.glTranslated(2.0, 0.0, 0.0);
-        rotateZ(speed);
-        sphere(0.2);
-
-        speed = speed + 1;
-    }
-
-    private void sun(double radius, double angle) {
-        gl.glLoadIdentity();
-        rotateZ(angle);
-        sphere(radius);
-    }
-
-    private void planet(double radius, double selfSpeed, double speedAroundSun, double positionFromSun) {
-        contextPlanet(selfSpeed, speedAroundSun, positionFromSun);
-        sphere(radius);
-    }
-
-    private void contextPlanet(double selfSpeed, double speedAroundSun, double positionFromSun) {
-        gl.glLoadIdentity();
-        rotateZ(selfSpeed);
-        gl.glTranslated(positionFromSun, 0.0, 0.0);
-        rotateZ(speedAroundSun);
-    }
-
-    private void sphere(double radius) {
-        GLUquadric q = glu.gluNewQuadric();
-        glu.gluQuadricDrawStyle(q, GLU_LINE);
-        glu.gluQuadricNormals(q, GLU_FLAT);
-        glu.gluQuadricOrientation(q, GLU_OUTSIDE);
-        glu.gluSphere(q, radius, 16, 16);
-        glu.gluDeleteQuadric(q);
-    }
-
-    private void rotateZ(double speed) {
-        gl.glRotated(speed, 0.0, 0.0, 1.0);
     }
 
     // **************** MAIN PROGRAM **************
@@ -133,8 +127,8 @@ public class SolarSystem implements GLEventListener {
         GLCapabilities caps = new GLCapabilities(glp);
         GLCanvas canvas = new GLCanvas(caps);
 
-        Frame frame = new Frame("Rotation test");
-        frame.setSize(800, 600);
+        Frame frame = new Frame("Solar system");
+        frame.setSize(1200, 800);
         frame.add(canvas);
         frame.setVisible(true);
 
@@ -144,7 +138,9 @@ public class SolarSystem implements GLEventListener {
             }
         });
 
-        canvas.addGLEventListener(new SolarSystem());
+        SolarSystem solarSystem = new SolarSystem();
+        canvas.addGLEventListener(solarSystem);
+        canvas.addKeyListener(solarSystem);
 
         FPSAnimator animator = new FPSAnimator(canvas, 60);
         animator.add(canvas);

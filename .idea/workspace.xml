@@ -2,26 +2,38 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/test/java/navigation/PositionTest.java" description="import static org.fest.assertions.Assertions.asser..." line="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystem.java" line="140" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" name="Default" comment="- fuly POC planet rotation system : sun, several planets, several satellites per planet">
+    <list default="true" id="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/incubator/core/Satellite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/incubator/scene/SceneEvents.java" />
+      <change type="DELETED" beforePath="C:\Users\sdrouard\IdeaProjects\solar-mg\src\main\java\incubator\core\Renderer.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/templates/Basic3DWindow.java" afterPath="$PROJECT_DIR$/src/main/java/templates/Basic3DWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/Camera.java" afterPath="$PROJECT_DIR$/src/main/java/core/Camera.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/incubator/core/Planet.java" afterPath="$PROJECT_DIR$/src/main/java/incubator/core/Planet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/navigation/Position.java" afterPath="$PROJECT_DIR$/src/main/java/navigation/Position.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/scene/RotationTest.java" afterPath="$PROJECT_DIR$/src/test/java/scene/RotationTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/scene/Scene.java" afterPath="$PROJECT_DIR$/src/main/java/scene/Scene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystem.java" afterPath="$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java" afterPath="$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/incubator/core/Sun.java" afterPath="$PROJECT_DIR$/src/main/java/incubator/core/Sun.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="b76b2702-2669-463a-b5cf-64c3fc8521c9" name="Not useful" comment="" />
     <ignored path="solar-mg.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Test3D.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1397165466364" ignored="false" />
-    <file path="/Scene.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396561925571" ignored="false" />
+    <file path="/Scene.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404332716398" ignored="false" />
     <file path="/SolarMgWindow.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1384647667201" ignored="false" />
-    <file path="/Basic3DWindow.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1384647704798" ignored="false" />
-    <file path="/fragment.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404145222986" ignored="false" />
-    <file path="/Dummy.txt" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404225790886" ignored="false" />
+    <file path="/Basic3DWindow.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404325633704" ignored="false" />
+    <file path="/fragment.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404327137440" ignored="false" />
+    <file path="/Dummy.txt" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404387725157" ignored="false" />
     <file path="/pom.xml" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1381670660713" ignored="false" />
-    <file path="/SceneTest.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1369438327882" ignored="false" />
-    <file path="/Sphere.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1403802263894" ignored="false" />
-    <file path="/Camera.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396446157957" ignored="false" />
-    <file path="/Planet.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396566914714" ignored="false" />
+    <file path="/SceneTest.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404327130585" ignored="false" />
+    <file path="/Sphere.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404312251626" ignored="false" />
+    <file path="/Camera.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404339465123" ignored="false" />
+    <file path="/Planet.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404314655878" ignored="false" />
     <file path="/SphereBuilder.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1369511708674" ignored="false" />
     <file path="/Position.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396792071556" ignored="false" />
     <file path="/Transport.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396993230260" ignored="false" />
@@ -48,9 +60,15 @@
     <file path="/Game.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396567518770" ignored="false" />
     <file path="/SceneTextRenderer.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396561857298" ignored="false" />
     <file path="/Wallet.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1396561687162" ignored="false" />
-    <file path="/RotationTest.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404225866767" ignored="false" />
+    <file path="/RotationTest.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404332623087" ignored="false" />
     <file path="/PositionFactory.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1403802630982" ignored="false" />
     <file path="/Renderer.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1403802428224" ignored="false" />
+    <file path="/SolarSystem.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404339623156" ignored="false" />
+    <file path="/Sun.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404312214619" ignored="false" />
+    <file path="/Plane.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404228938279" ignored="false" />
+    <file path="/Satellite.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404314766948" ignored="false" />
+    <file path="/SolarSystemEvents.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404327345068" ignored="false" />
+    <file path="/SceneEvents.java" changelist="8712bff8-c3a1-44ed-9cfa-ceb7b319a76d" time="1404333654287" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,10 +211,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RotationTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/scene/RotationTest.java">
+      <file leaf-file-name="SolarSystem.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="23" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.6393939">
+            <state line="43" column="180" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.019767443">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -204,19 +222,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RouteDirection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/RouteDirection.java">
+      <file leaf-file-name="Sun.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Sun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PositionFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/navigation/PositionFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="4" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+            <state line="5" column="28" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -225,16 +234,34 @@
       <file leaf-file-name="Sphere.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="26" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.0">
+            <state line="11" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Renderer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Renderer.java">
+      <file leaf-file-name="Planet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Planet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="71" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
+            <state line="9" column="31" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SceneEvents.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/incubator/scene/SceneEvents.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="50" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="30" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -265,22 +292,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/core/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Wallet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Planet.java" />
-        <option value="$PROJECT_DIR$/src/test/java/navigation/PositionTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/navigation/Position.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Transport.java" />
-        <option value="$PROJECT_DIR$/src/test/java/core/TransportTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/scene/Scene.java" />
-        <option value="$PROJECT_DIR$/src/test/java/scene/Test3D.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/scene/ShapeBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/templates/Basic3DWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java" />
         <option value="$PROJECT_DIR$/src/main/java/incubator/core/Renderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/navigation/PositionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/core/Plane.java" />
+        <option value="$PROJECT_DIR$/src/main/java/navigation/Position.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/core/Sun.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/core/Planet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/core/Satellite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/templates/Basic3DWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/scene/SceneTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystemEvents.java" />
         <option value="$PROJECT_DIR$/src/test/java/scene/RotationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/scene/Scene.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/scene/SceneEvents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/Camera.java" />
+        <option value="$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystem.java" />
       </list>
     </option>
   </component>
@@ -396,6 +423,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -415,23 +443,166 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scene" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="incubator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scene" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solar-mg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="incubator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="118" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="70" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="70" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="71" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="71" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hands-on-hystrix" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="70" />
@@ -447,9 +618,9 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.25119618" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/navigation" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
@@ -457,8 +628,8 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -470,6 +641,7 @@
       <recent name="scene" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="incubator.scene" />
       <recent name="core" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -478,7 +650,7 @@
       <recent name="navigation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RotationTest">
+  <component name="RunManager" selected="Application.SolarSystem">
     <configuration default="false" name="TransportTest" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="solar-mg" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -523,32 +695,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TransportTest.should_update_when_transport_has_reached_start_change_status_to_LOADING" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="solar-mg" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="core" />
-      <option name="MAIN_CLASS_NAME" value="core.TransportTest" />
-      <option name="METHOD_NAME" value="should_update_when_transport_has_reached_start_change_status_to_LOADING" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
     <configuration default="false" name="Test3D" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="scene.Test3D" />
       <option name="VM_PARAMETERS" />
@@ -581,6 +727,22 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="SolarSystem" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="incubator.scene.SolarSystem" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="solar-mg" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -593,6 +755,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -620,19 +795,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -672,17 +834,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TransportTest" />
       <item index="1" class="java.lang.String" itemvalue="Application.SolarMgWindow" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TransportTest.should_update_when_transport_has_reached_start_change_status_to_LOADING" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Test3D" />
-      <item index="4" class="java.lang.String" itemvalue="Application.RotationTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Test3D" />
+      <item index="3" class="java.lang.String" itemvalue="Application.RotationTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SolarSystem" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.RotationTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Test3D" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SolarMgWindow" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TransportTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TransportTest.should_update_when_transport_has_reached_start_change_status_to_LOADING" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SolarSystem" />
+        <item index="1" class="java.lang.String" itemvalue="Application.RotationTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Test3D" />
+        <item index="3" class="java.lang.String" itemvalue="Application.SolarMgWindow" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TransportTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -783,31 +945,39 @@
       <created>1404223510893</created>
       <updated>1404223510893</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="- fuly POC planet rotation system : sun, several planets, several satellites per planet">
+      <created>1404226052173</created>
+      <updated>1404226052173</updated>
+    </task>
+    <task id="LOCAL-00019" summary="- Added a SolarSytem POC to create a solar system">
+      <created>1404229318509</created>
+      <updated>1404229318509</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37895927" sideWeight="0.49573106" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29298642" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2239819" sideWeight="0.5373533" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35180995" sideWeight="0.45144078" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17398287" sideWeight="0.22460496" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.49786553" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35180995" sideWeight="0.54855925" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17342582" sideWeight="0.38487583" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12966916" sideWeight="0.7760181" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2239819" sideWeight="0.46264675" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12966916" sideWeight="0.6798642" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32013574" sideWeight="0.46264675" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35180995" sideWeight="0.54855925" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24866596" sideWeight="0.699095" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -855,7 +1025,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- update test forr planets rotation&#10;- almost fully fonctionnal planet rotation system : sun, several planets, one satellite per planet" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added a SolarSytem POC to create a solar system" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -884,6 +1054,8 @@
     <MESSAGE value="Update transport test and correct transport speed condition change (speed can't be &lt; 0)" />
     <MESSAGE value="Add a test for rotation of planets&#10;Move Test3D to correct package" />
     <MESSAGE value="- update test forr planets rotation&#10;- almost fully fonctionnal planet rotation system : sun, several planets, one satellite per planet" />
+    <MESSAGE value="- fuly POC planet rotation system : sun, several planets, several satellites per planet" />
+    <MESSAGE value="- Added a SolarSytem POC to create a solar system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -893,102 +1065,102 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/scene/SolarMgWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="101" selection-end="299" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1347" selection-end="1551" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/scene/Test3D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="31" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/templates/Basic3DWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="29" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/scene/ShapeBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="42" selection-start="496" selection-end="496" vertical-scroll-proportion="0.22934233" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Planet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Route.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="22" selection-start="757" selection-end="757" vertical-scroll-proportion="0.33274648">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="34" selection-start="1517" selection-end="1542" vertical-scroll-proportion="0.019813519" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/navigation/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="107" selection-end="115" vertical-scroll-proportion="0.10164425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="11" selection-start="351" selection-end="351" vertical-scroll-proportion="0.22869955">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/navigation/Maths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="116" selection-end="116" vertical-scroll-proportion="0.10164425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="26" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/navigation/PositionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+        <state line="88" column="30" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/RouteDirection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0/src.zip!/java/text/Format.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="24" selection-start="5522" selection-end="5522" vertical-scroll-proportion="0.33282906" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/navigation/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="27" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Renderer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/scene/Test3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="71" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
+        <state line="30" column="8" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="25" selection-start="344" selection-end="344" vertical-scroll-proportion="0.32922536" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/Basic3DWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="10" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Satellite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="76" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="33" selection-start="2722" selection-end="2722" vertical-scroll-proportion="0.33274648" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/scene/RotationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="23" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.6393939">
+        <state line="72" column="28" selection-start="1862" selection-end="1862" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Sun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="28" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/scene/SceneEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="50" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Sphere.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="30" selection-start="2336" selection-end="2336" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/core/Planet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/incubator/scene/SolarSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="180" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.019767443">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
