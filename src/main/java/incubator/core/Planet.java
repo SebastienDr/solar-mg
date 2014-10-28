@@ -2,6 +2,7 @@ package incubator.core;
 
 import com.google.common.collect.Lists;
 import navigation.Position;
+import navigation.PositionFactory;
 
 import javax.media.opengl.GL2;
 import javax.media.opengl.glu.GLU;
@@ -41,11 +42,11 @@ public class Planet extends Sphere {
 
     public void render(GL2 gl) {
         context(gl);
-        super.render(new GLU());
+        super.render();
         for (Satellite s : satellites) {
             context(gl);
             s.context(gl);
-            s.render(new GLU());
+            s.render();
         }
     }
 

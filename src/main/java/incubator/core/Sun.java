@@ -19,7 +19,7 @@ public class Sun extends Sphere {
     public void render(GL2 gl) {
         gl.glLoadIdentity();
         gl.glRotated(this.getSelfRotation(), 0.0, 0.0, 1.0);
-        render(new GLU());
+        super.render();
     }
 
     public void update() {

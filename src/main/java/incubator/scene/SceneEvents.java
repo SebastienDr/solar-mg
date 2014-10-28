@@ -4,10 +4,7 @@ import core.Camera;
 
 import javax.media.opengl.GLAutoDrawable;
 import javax.media.opengl.GLEventListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 /**
  * Aggregator class to remove boilerplates methods from main game class.
@@ -15,13 +12,13 @@ import java.awt.event.MouseListener;
  *
  * @version BETA
  */
-public class SceneEvents implements GLEventListener, KeyListener, MouseListener {
+public class SceneEvents implements GLEventListener, KeyListener, MouseListener, MouseMotionListener {
 
     protected Camera camera;
 
     @Override
     public void init(GLAutoDrawable glAutoDrawable) {
-        camera = new Camera(200);
+        camera = new Camera(100000);
     }
 
     @Override
@@ -88,6 +85,16 @@ public class SceneEvents implements GLEventListener, KeyListener, MouseListener 
 
     @Override
     public void mouseExited(MouseEvent e) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 }

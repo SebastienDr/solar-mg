@@ -58,11 +58,11 @@ public class Camera {
     }
 
     public void zoomIn() {
-        setDistance(getDistance() - 300);
+        setDistance(getDistance() - getInitDistance()/10);
     }
 
     public void zoomOut() {
-        setDistance(getDistance() + 300);
+        setDistance(getDistance() + getInitDistance()/10);
     }
 
     // Accessors

@@ -35,7 +35,8 @@ public class Sphere {
     }
 
     // Methods
-    public void render(GLU glu) {
+    public void render() {
+        GLU glu = new GLU();
         GLUquadric q = glu.gluNewQuadric();
         glu.gluQuadricDrawStyle(q, GLU_LINE);
         glu.gluQuadricNormals(q, GLU_FLAT);
@@ -44,9 +45,11 @@ public class Sphere {
         glu.gluDeleteQuadric(q);
     }
 
+    public void updateSelfRotation() {
+        this.selfRotation = this.selfRotation + this.selfRotationSpeed;
+    }
+
     // toString
-
-
     @Override
     public String toString() {
         return "{" +
@@ -77,24 +80,12 @@ public class Sphere {
         return selfRotation;
     }
 
-    public void setSelfRotation(double selfRotation) {
-        this.selfRotation = selfRotation;
-    }
-
     public double getSelfRotationSpeed() {
         return selfRotationSpeed;
     }
 
     public void setSelfRotationSpeed(double selfRotationSpeed) {
         this.selfRotationSpeed = selfRotationSpeed;
-    }
-
-    public void updateSelfRotation(double rot) {
-        this.selfRotation = this.selfRotation + rot;
-    }
-
-    public void updateSelfRotation() {
-        this.selfRotation = this.selfRotation + this.selfRotationSpeed;
     }
 
 }

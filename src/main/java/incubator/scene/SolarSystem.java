@@ -2,7 +2,6 @@ package incubator.scene;
 
 import com.google.common.collect.Lists;
 import com.jogamp.opengl.util.FPSAnimator;
-import core.Camera;
 import incubator.core.Planet;
 import incubator.core.Satellite;
 import incubator.core.Sun;
@@ -11,7 +10,6 @@ import navigation.PositionFactory;
 
 import javax.media.opengl.*;
 import javax.media.opengl.awt.GLCanvas;
-import javax.media.opengl.glu.GLU;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -20,26 +18,23 @@ import java.util.List;
 public class SolarSystem extends SceneEvents {
 
     // Fields
-    private GLU glu = new GLU();
     private GL2 gl;
     private Sun sun;
     private List<Planet> planets = Lists.newArrayList();
-    private SceneEvents events;
 
     // ************** INIT *************
     public void init(GLAutoDrawable drawable) {
         super.init(drawable);
         gl = drawable.getGL().getGL2();
         theSolarSystem();
+        //aSolarSystem();
         //generate(6);
     }
 
-
     private void theSolarSystem() {
         sun = new Sun(1392.684, 0.037);
-        planets.add(new Planet(2.439, 0.00707, 0.01137, pos(sun.getRadius()+57000, 0.0, 0.0)));
+        planets.add(new Planet(2.439, 0.00707, 0.01137, pos(sun.getRadius() + 15000, 0.0, 0.0)));
     }
-
 
     private void aSolarSystem() {
         sun = new Sun(2.0, 0.1);
@@ -60,7 +55,6 @@ public class SolarSystem extends SceneEvents {
      */
     public void generate(int nbMaxPlanet) {
         sun = new Sun(5 + random(5), random(1));
-        System.out.println(sun);
         double pos = 0.0;
         // planets
         for (int i = 0; i <= random(1, nbMaxPlanet); i++) {
@@ -131,6 +125,8 @@ public class SolarSystem extends SceneEvents {
         frame.setSize(1200, 800);
         frame.add(canvas);
         frame.setVisible(true);
+        frame.setFocusableWindowState(true);
+        frame.setAutoRequestFocus(true);
 
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
