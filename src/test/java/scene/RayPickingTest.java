@@ -18,8 +18,8 @@ public class RayPickingTest implements GLEventListener, MouseListener, MouseMoti
     private GL2 gl;
     private Camera camera;
     private static GLCanvas canvas;
-    public static int mouseX = 0;
-    public static int mouseY = 0;
+    public static double mouseX = 0.0;
+    public static double mouseY = 0.0;
     public static boolean mouseClick = false;
 
     public static void main(String[] args) {
@@ -56,8 +56,7 @@ public class RayPickingTest implements GLEventListener, MouseListener, MouseMoti
     private void computeEvents(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
         if (mouseClick) {
-            System.out.println("Mouse click at " + mouseX + "," + mouseY + " !");
-            //mouseClick = false;
+            //System.out.println("Mouse click at " + mouseX + "," + mouseY + " !");
         }
     }
 
@@ -68,7 +67,7 @@ public class RayPickingTest implements GLEventListener, MouseListener, MouseMoti
     public void init(GLAutoDrawable drawable) {
         gl = drawable.getGL().getGL2();
         glu = new GLU();
-        camera = new Camera(30);
+        camera = new Camera(10);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
     }
 
@@ -83,13 +82,29 @@ public class RayPickingTest implements GLEventListener, MouseListener, MouseMoti
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
         camera.render(gl.getGL2());
 
+        drawAxes();
         //sphere(4);
 
         if (mouseClick) {
             gl.glLoadIdentity();
-            gl.glTranslated((double) mouseX / 60, (double) mouseY / 120, 2.0);
-            sphere(2);
+            ray(drawable, (mouseX-400)/40, (mouseY-300)/30);
         }
+    }
+
+    private void drawAxes() {
+        gl.glBegin(GL2.GL_LINES);
+        gl.glColor3f(1.0f, 0.0f, 0.0f);
+        gl.glVertex3d(0.0, 0.0, 0.0);
+        gl.glVertex3d(1.0, 0.0, 0.0);
+
+        gl.glColor3f(0.0f, 1.0f, 0.0f);
+        gl.glVertex3d(0.0, 0.0, 0.0);
+        gl.glVertex3d(0.0, 1.0, 0.0);
+
+        gl.glColor3f(0.0f, 0.0f, 1.0f);
+        gl.glVertex3d(0.0, 0.0, 0.0);
+        gl.glVertex3d(0.0, 0.0, 1.0);
+        gl.glEnd();
     }
 
     private void sphere(double radius) {
@@ -101,10 +116,18 @@ public class RayPickingTest implements GLEventListener, MouseListener, MouseMoti
         glu.gluDeleteQuadric(q);
     }
 
+    private void ray(GLAutoDrawable drawable, double x, double y) {
+        GL2 gl = drawable.getGL().getGL2();
+        gl.glBegin(GL2.GL_LINES);
+        gl.glVertex3d(camera.getCenter().getX(), camera.getCenter().getY(), 0.0f); // origin of the line
+        gl.glVertex3d(x, -y, -1.0f); // ending point of the line
+        gl.glEnd();
+    }
+
     @Override
     public void mouseClicked(MouseEvent e) {
-        mouseX = e.getX();
-        mouseY = e.getY();
+        mouseX = e.getLocationOnScreen().getX();
+        mouseY = e.getLocationOnScreen().getY();
         mouseClick = true;
     }
 
